@@ -1,6 +1,67 @@
 # Clean data
 #############
 
-# 
+### packages
 
+import pandas as pd
 import spacy
+nlp = spacy.load('pt')
+import nltk  
+nltk.download('rslp')
+
+### import data
+
+corpus = pd.read_csv('corpus.csv') 
+
+### convert abstracts column into a list
+
+abstracts = corpus['abstracts'].to_list()
+
+### change characteres, remove 'estado' (different from 'Estado'), convert all characteres to lower case, and tokenize abstracts
+
+data = []
+
+for i in range(len(abstracts)):
+    abstracts[i] = abstracts[i].replace(',','').replace('.','').replace('-',' ').replace('(','').replace(')','').replace(':','').replace('"','').replace(';','').replace('/',' ').replace('“','').replace('”','').replace("'",'').replace('?','').replace('‘','').replace('’','').replace('¹','').replace('´','')
+    abstracts[i] = abstracts[i].split()
+    abstracts[i] = ' '.join([word.lower() for word in abstracts[i] if (word != 'estado') and (word != 'estados')])
+    doc = nlp(abstracts[i])
+    data.append(doc)
+    
+### create a list with gramma types and another list with words
+
+data_gramma = []
+data_words = []
+
+for abstract in data:
+    gramma_list = [token.pos_ for token in abstract if not token.is_punct]
+    words_list = [token.orth_ for token in abstract if not token.is_punct]
+    data_gramma.append(gramma_list)
+    data_words.append(words_list)
+
+### remove stop words based on gramma
+
+for n,l in enumerate(data_gramma):
+    gramma = []
+    words = []
+    for i,t in enumerate(l):
+        if (t == 'SPACE') or (t == 'DET') or (t == 'PRON') or (t == 'ADP') or (t == 'NUM') or (t == 'CCONJ') or (t == 'SCONJ') or (t == 'PART'):  
+            continue
+        else:
+            gramma.append(data_gramma[n][i])
+            words.append(data_words[n][i])
+    data_gramma[n] = gramma
+    data_words[n] = word
+    
+### create a list with roots of words
+ 
+data_roots = []
+
+stemmer = nltk.stem.RSLPStemmer()
+
+for i,l in enumerate(data_words):
+    words_root = []
+    for word in l:
+        root = stemmer.stem(word)
+        words_root.append(root)
+    data_roots.append(words_root)
