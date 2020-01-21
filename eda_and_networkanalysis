@@ -1,0 +1,31 @@
+# EDA & Network Analysis
+#########################
+
+### packages
+
+from networkx.algorithms import average_clustering
+from itertools import combinations as comb
+from community import community_louvain
+from collections import Counter
+import networkx as nx
+
+### count the frenquency of words and roots/words
+
+words_list = []
+for i,l in enumerate(data_words):
+    for w in l:
+        words_list.append(w)
+        
+freq = Counter(words_list)
+words_freq = {k: v for k, v in sorted(freq.items(), key=lambda item: item[1], reverse=True)}
+
+
+roots_list = []
+for i,l in enumerate(data_roots):
+    for w in l:
+        roots_list.append(w)
+        
+freq = Counter(roots_list)
+roots_freq = {k: v for k, v in sorted(freq.items(), key=lambda item: item[1], reverse=True)}
+
+
