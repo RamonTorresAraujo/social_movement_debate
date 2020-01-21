@@ -1,7 +1,7 @@
 # Brazilian Social Movements Debate 
 ####################################
 
-This repository contains the codes relate to a project, already accepted to be published, where we analyzed 447 articles about social movement published in the prestigious Brazilian journals.
+This repository contains the codes relate to a project, already accepted to be published, where we analyzed 447 articles about social movement published in prestigious Brazilian journals. I used Python to get, clean, and analyze the data, as well as modules as pandas, spacy, itertools, networkx, and so on. 
 
 Szwako, J.; Dowbor, M.; Araujo, R. (forthcoming), The production of academical articles about social movements published in Brazilian journals (2000-2017): trends and innovations, BIB.   
 
@@ -19,4 +19,4 @@ Is there a consolidated debate with shared problems and theories about social mo
 
 4. We performed the EDA, checking the vocabulary and counting the frequency of words. 
 
-5. We performed network analyses of co-words and co-references, analyzing measures as density and betweenness, and identifying clusters of words and references.    
+5. We performed network analyses of co-words and co-references/authors, analyzing measures as density and betweenness, and identifying clusters of words and references.    
