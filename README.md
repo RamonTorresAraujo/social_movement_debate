@@ -1,4 +1,4 @@
-# Brazilian Social Movement Debate 
+# Brazilian Social Movements Debate 
 ####################################
 
 This repository contains the codes relate to a project, already accepted to be published, where we analyzed 447 articles about social movement published in the prestigious Brazilian journals.
