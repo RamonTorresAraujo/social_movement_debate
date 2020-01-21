@@ -1,16 +1,15 @@
-####################################
-# Brazilian Social Movement Debate #
+# Brazilian Social Movement Debate 
 ####################################
 
 This repository contains the codes relate to a project, already accepted to be published, where we analyzed 447 articles about social movement published in the prestigious Brazilian journals.
 
 Szwako, J.; Dowbor, M.; Araujo, R. (forthcoming), The production of academical articles about social movements published in Brazilian journals (2000-2017): trends and innovations, BIB.   
 
-# Main research question:
+## Main research question:
 
 Is there a consolidated debate with shared problems and theories about social movements in Brazil?   
 
-# Work steps:
+## Work steps:
 
 1. We scraped from Scielo platform the urls, titles, abstracts, and references of the articles with words (and their plurals) 'movimento', 'ação coletiva', 'conflito', 'confronto', 'protesto', 'mobilização', 'manifestação', and 'reivindicação',  that were published, between 2000 and 2017, in journals ranked by Capes as A1 and A2 at the Antropology, Political Science, and Sociology fields.    
 
